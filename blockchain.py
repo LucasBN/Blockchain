@@ -5,6 +5,7 @@ from time import time
 from uuid import uuid4
 from flask import Flask, jsonify, request
 from urllib.parse import urlparse
+import requests
 
 class Blockchain(object):
     def __init__(self):
@@ -254,7 +255,7 @@ def consensus():
             'chain': blockchain.chain
         }
 
-    return jsonify(reponse), 200
+    return jsonify(response), 200
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000)
